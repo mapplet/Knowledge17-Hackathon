@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_codereviewer.Condition</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>Condition</name>
+        <script><![CDATA[var Condition = Class.create();
+Condition.prototype = {
+    initialize: function() {
+		this.RESULT = false;
+    },
+	
+	hasOpenRequest: function(current) {
+
+		try {
+			var currentId = current.getValue('sys_id');
+			gs.debug("[hasOpenRequest] currentId: " + currentId);
+
+			var reviewTask = new GlideRecord('x_snc_codereviewer_task');
+			if (reviewTask.get('to_be_reviewed', currentId))
+				this.RESULT = true;
+		}
+		catch (ex) {
+			gs.error("[hasOpenRequest] " + ex);
+		}
+		finally {
+			gs.debug("[hasOpenRequest] Result: " + this.RESULT);
+			return this.RESULT;
+		}
+	},
+	
+	hasNoOpenRequest: function(current) {
+		return !this.hasOpenRequest(current);
+	},
+
+    type: 'Condition'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-05-09 16:25:33</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>71064b3e4f2e7600dcfa01b18110c724</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Condition</sys_name>
+        <sys_package display_value="CodeReviewer" source="x_snc_codereviewer">80e372b24f2e7600dcfa01b18110c7fd</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="CodeReviewer">80e372b24f2e7600dcfa01b18110c7fd</sys_scope>
+        <sys_update_name>sys_script_include_71064b3e4f2e7600dcfa01b18110c724</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-05-09 18:14:52</sys_updated_on>
+    </sys_script_include>
+</record_update>

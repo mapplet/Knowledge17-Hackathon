@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_codereviewer.CodeReviewerClient</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>CodeReviewerClient</name>
+        <script><![CDATA[var CodeReviewerClient = Class.create();
+CodeReviewerClient.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	
+	requestReview: function() {
+		
+		var result = {
+			'success': false,
+			'reviewTaskId': ''
+		};
+		
+		try {
+			var toBeReviewedId = this.getParameter('sysparm_to_be_reviewed_id');
+			var toBeReviewedTable = this.getParameter('sysparm_to_be_reviewed_table');
+
+			gs.debug("[CodeReviewerClient] toBeReviewedId: " + toBeReviewedId);
+			gs.debug("[CodeReviewerClient] toBeReviewedTable: " + toBeReviewedTable);
+
+			var toBeReviewed = new GlideRecord(toBeReviewedTable);
+			if (toBeReviewed.get(toBeReviewedId)) {
+				var codeReviewer = new CodeReviewer();
+				var requestedReviewTask = codeReviewer.requestReview(toBeReviewed);
+				
+				if (requestedReviewTask) {
+					var link = '<a href="nav_to.do?uri=x_snc_codereviewer_task.do?sys_id=' + requestedReviewTask.getValue('sys_id') + '">' + requestedReviewTask.number + '</a>';
+					gs.addInfoMessage("A code review has been requested for this application file: " + link);
+				}
+				
+				if (requestedReviewTask) {
+					result.success = true;
+					result.reviewTaskId = requestedReviewTask.getValue('sys_id');
+				}
+			}
+		}
+		catch (ex) {
+			gs.error("[CodeReviewerClient] " + ex);
+		}
+		finally {
+			return JSON.stringify(result, null, 4);
+		}
+	},
+	
+    type: 'CodeReviewerClient'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-05-09 16:49:40</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>cfccc3b24f6e7600dcfa01b18110c76d</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>CodeReviewerClient</sys_name>
+        <sys_package display_value="CodeReviewer" source="x_snc_codereviewer">80e372b24f2e7600dcfa01b18110c7fd</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="CodeReviewer">80e372b24f2e7600dcfa01b18110c7fd</sys_scope>
+        <sys_update_name>sys_script_include_cfccc3b24f6e7600dcfa01b18110c76d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-05-09 19:22:19</sys_updated_on>
+    </sys_script_include>
+</record_update>

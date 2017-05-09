@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="accept_time" label="Accepted Time" language="en" table="x_snc_codereviewer_user_mapping">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>accept_time</element>
+            <help/>
+            <hint/>
+            <label>Accepted Time</label>
+            <language>en</language>
+            <name>x_snc_codereviewer_user_mapping</name>
+            <plural>Accepted Times</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 17:16:45</sys_created_on>
+            <sys_customer_update>true</sys_customer_update>
+            <sys_id>a6b59b3a4f6e7600dcfa01b18110c716</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Accepted Time</sys_name>
+            <sys_package display_value="CodeReviewer" source="x_snc_codereviewer">80e372b24f2e7600dcfa01b18110c7fd</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="CodeReviewer">80e372b24f2e7600dcfa01b18110c7fd</sys_scope>
+            <sys_update_name>sys_documentation_x_snc_codereviewer_user_mapping_accept_time_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 17:16:45</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

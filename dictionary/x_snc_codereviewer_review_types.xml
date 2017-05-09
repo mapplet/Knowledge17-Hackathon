@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Review types" max_length="40" name="x_snc_codereviewer_review_types" type="collection">
+        <element display="true" label="Name" max_length="40" name="name" type="string"/>
+        <element label="review_type" max_length="40" name="script_type" type="string"/>
+    </element>
+</database>

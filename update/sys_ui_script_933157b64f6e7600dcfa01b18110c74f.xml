@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_script">
+    <sys_ui_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <global>false</global>
+        <name>x_snc_codereviewer.CodeReviewer</name>
+        <script><![CDATA[var x_snc_codereviewer = x_snc_codereviewer || {};
+
+x_snc_codereviewer.CodeReviewer = (function() {
+	"use strict";
+
+/* set your private variables and functions here. For example: 
+	var privateVar = 0; 
+	function private_function() {
+		return ++privateVar;
+	}
+*/
+
+/* Share variables between multiple UI scripts by adding them to your scope object. For example: 
+	x_snc_codereviewer.sharedVar = 0; 
+
+ Then access them in your scripts the same way. For example: 
+	function get_shared() {
+		return x_snc_codereviewer.sharedVar;
+	}
+*/
+
+	return {
+
+/* set your public API here. For example:
+		incrementAndReturnPrivateVar: function() {
+			return private_function();
+		},
+*/
+		confirmRequestReview: function() {
+
+			var confirmed = confirm("Do you want to request a code review for this application file?");
+
+			if (confirmed) {
+
+				var ga = new GlideAjax('CodeReviewerClient');
+				ga.addParam('sysparm_name','requestReview');
+				ga.addParam('sysparm_to_be_reviewed_id', g_form.getUniqueValue());
+				ga.addParam('sysparm_to_be_reviewed_table', g_form.getTableName());
+				ga.getXML(RequestReviewParse);
+			}
+
+			function RequestReviewParse(response) {
+				var answer = response.responseXML.documentElement.getAttribute("answer");
+				alert(answer);
+			}
+		},
+		
+		type:  "CodeReviewer"
+	};
+})();
+]]></script>
+        <script_name>CodeReviewer</script_name>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-05-09 17:00:17</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>933157b64f6e7600dcfa01b18110c74f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_codereviewer.CodeReviewer</sys_name>
+        <sys_package display_value="CodeReviewer" source="x_snc_codereviewer">80e372b24f2e7600dcfa01b18110c7fd</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="CodeReviewer">80e372b24f2e7600dcfa01b18110c7fd</sys_scope>
+        <sys_update_name>sys_ui_script_933157b64f6e7600dcfa01b18110c74f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-05-09 17:00:17</sys_updated_on>
+        <use_scoped_format>true</use_scoped_format>
+    </sys_ui_script>
+</record_update>

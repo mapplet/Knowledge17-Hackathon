@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Codereviewer M2m Users Tasks" max_length="40" name="x_snc_codereviewer_m2m_users_tasks" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="State" max_length="40" name="state" type="string"/>
+        <element label="Task" max_length="32" name="task" reference="x_snc_codereviewer_task" type="reference"/>
+        <element label="User" max_length="32" name="user" reference="sys_user" type="reference"/>
+        <element label="Date" max_length="40" name="u_glide_date_time_2" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="pending" label="State" max_length="40" name="u_state" type="string">
+            <choice>
+                <element label="Accept" sequence="0" value="accept"/>
+                <element label="Reject" sequence="1" value="reject"/>
+                <element label="Pending" sequence="2" value="pending"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="task"/>
+        </index>
+        <index name="index2">
+            <element name="user"/>
+        </index>
+    </element>
+</database>

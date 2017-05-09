@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Codereviewer M2m Application Files Tasks" max_length="40" name="x_snc_codereviewer_m2m_application_files_tasks" type="collection">
+        <element label="Application File" max_length="32" name="application_file" reference="sys_metadata" type="reference"/>
+        <element label="Task" max_length="32" name="task" reference="x_snc_codereviewer_task" type="reference"/>
+        <index name="index">
+            <element name="task"/>
+        </index>
+        <index name="index2">
+            <element name="application_file"/>
+        </index>
+    </element>
+</database>

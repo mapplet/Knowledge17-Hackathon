@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element attributes="live_feed=true" extends="task" label="Task" max_length="40" name="x_snc_codereviewer_task" sizeclass="1" type="collection">
+        <element label="Reviewer" max_length="32" name="reviewer" reference="sys_user" type="reference"/>
+        <element label="To be Reviewed" max_length="32" name="to_be_reviewed" reference="sys_metadata" type="reference"/>
+        <element label="To Review" max_length="32" name="to_review" reference="sys_metadata" type="reference"/>
+    </element>
+</database>
