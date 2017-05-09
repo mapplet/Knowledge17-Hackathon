@@ -2,45 +2,49 @@
 <record_update sys_domain="global" table="sys_app_module">
     <sys_app_module action="INSERT_OR_UPDATE">
         <active>true</active>
-        <application display_value="User mappings">6affc7764f6e7600dcfa01b18110c7dc</application>
+        <application display_value="Code Review">fcb68c834fee7600dcfa01b18110c762</application>
         <assessment/>
         <content_page/>
         <device_type/>
-        <filter/>
+        <filter table="x_snc_codereviewer_task">active=true^assigned_toISEMPTY^reviewerDYNAMIC90d1921e5f510100a9ad2572f2b477fe^EQ<item endquery="false" field="active" goto="false" newquery="false" operator="=" or="false" value="true"/>
+            <item endquery="false" field="assigned_to" goto="false" newquery="false" operator="ISEMPTY" or="false" value=""/>
+            <item endquery="false" field="reviewer" goto="false" newquery="false" operator="DYNAMIC" or="false" value="90d1921e5f510100a9ad2572f2b477fe"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter>
         <hint/>
         <homepage/>
         <image/>
         <link_type>LIST</link_type>
         <map_page/>
-        <mobile_title>User mappings</mobile_title>
+        <mobile_title>Waiting for Acceptance</mobile_title>
         <mobile_view_name>Mobile</mobile_view_name>
-        <name>x_snc_codereviewer_user_mapping</name>
-        <order/>
+        <name>x_snc_codereviewer_task</name>
+        <order>510</order>
         <override_menu_roles>false</override_menu_roles>
         <query/>
         <report/>
-        <roles>x_snc_codereviewer.user_mapping_user</roles>
+        <roles/>
         <survey/>
         <survey_overwrite>true</survey_overwrite>
         <sys_class_name>sys_app_module</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2017-05-09 16:51:38</sys_created_on>
+        <sys_created_on>2017-05-09 21:00:41</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>26ffc7764f6e7600dcfa01b18110c7df</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>User mappings</sys_name>
+        <sys_id>618800c34fee7600dcfa01b18110c7f5</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Waiting for Acceptance</sys_name>
         <sys_overrides/>
         <sys_package display_value="CodeReviewer" source="x_snc_codereviewer">80e372b24f2e7600dcfa01b18110c7fd</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="CodeReviewer">80e372b24f2e7600dcfa01b18110c7fd</sys_scope>
-        <sys_update_name>sys_app_module_26ffc7764f6e7600dcfa01b18110c7df</sys_update_name>
+        <sys_update_name>sys_app_module_618800c34fee7600dcfa01b18110c7f5</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-05-09 16:51:38</sys_updated_on>
+        <sys_updated_on>2017-05-09 21:08:01</sys_updated_on>
         <timeline_page/>
-        <title>User mappings</title>
+        <title>Waiting for Acceptance</title>
         <uncancelable>false</uncancelable>
         <view_name/>
         <window_name/>

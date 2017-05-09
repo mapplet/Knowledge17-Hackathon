@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update sys_domain="global" table="sys_ui_action">
     <sys_ui_action action="INSERT_OR_UPDATE">
-        <action_name>request_code_review</action_name>
+        <action_name/>
         <active>true</active>
-        <client>true</client>
+        <client>false</client>
         <comments/>
-        <condition>new Condition().hasNoOpenRequest(current)</condition>
+        <condition>new Condition().canAcceptOrReject(current)</condition>
         <form_action>true</form_action>
         <form_button>true</form_button>
         <form_context_menu>false</form_context_menu>
         <form_link>false</form_link>
-        <hint>Request someone to review this script</hint>
+        <hint/>
         <list_action>false</list_action>
         <list_banner_button>false</list_banner_button>
         <list_button>false</list_button>
@@ -18,47 +18,33 @@
         <list_context_menu>false</list_context_menu>
         <list_link>false</list_link>
         <list_save_with_form_button>false</list_save_with_form_button>
-        <name>Request Code Review</name>
-        <onclick>confirmCRR()</onclick>
+        <name>Accept</name>
+        <onclick/>
         <order>100</order>
-        <script><![CDATA[function confirmCRR() {
-	var confirmed = confirm("Do you want to request a code review for this application file?");
-
-	if (confirmed) {
-
-		var ga = new GlideAjax('CodeReviewerClient');
-		ga.addParam('sysparm_name','requestReview');
-		ga.addParam('sysparm_to_be_reviewed_id', g_form.getUniqueValue());
-		ga.addParam('sysparm_to_be_reviewed_table', g_form.getTableName());
-		ga.getXML(RequestReviewParse);
-	}
-
-	function RequestReviewParse(response) {
-		// var answer = response.responseXML.documentElement.getAttribute("answer");
-	}
-}]]></script>
+        <script><![CDATA[current.state = '10';
+current.update();]]></script>
         <show_insert>false</show_insert>
         <show_multiple_update>false</show_multiple_update>
         <show_query>false</show_query>
         <show_update>true</show_update>
         <sys_class_name>sys_ui_action</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2017-05-09 16:05:18</sys_created_on>
+        <sys_created_on>2017-05-09 21:18:56</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>0865c33e4f2e7600dcfa01b18110c7c3</sys_id>
-        <sys_mod_count>11</sys_mod_count>
-        <sys_name>Request Code Review</sys_name>
+        <sys_id>100d84874fee7600dcfa01b18110c70e</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Accept</sys_name>
         <sys_overrides/>
         <sys_package display_value="CodeReviewer" source="x_snc_codereviewer">80e372b24f2e7600dcfa01b18110c7fd</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="CodeReviewer">80e372b24f2e7600dcfa01b18110c7fd</sys_scope>
-        <sys_update_name>sys_ui_action_0865c33e4f2e7600dcfa01b18110c7c3</sys_update_name>
+        <sys_update_name>sys_ui_action_100d84874fee7600dcfa01b18110c70e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-05-09 21:58:55</sys_updated_on>
-        <table>sys_script_client</table>
+        <sys_updated_on>2017-05-09 21:56:02</sys_updated_on>
+        <table>x_snc_codereviewer_task</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
     </sys_ui_action>

@@ -6,27 +6,27 @@
         <description/>
         <device_type>browser</device_type>
         <hint/>
-        <name>Task</name>
+        <name/>
         <order>100</order>
-        <roles>x_snc_codereviewer.task_user</roles>
+        <roles/>
         <sys_class_name>sys_app_application</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2017-05-09 14:53:27</sys_created_on>
+        <sys_created_on>2017-05-09 20:51:36</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>abe47ef24f2e7600dcfa01b18110c7d0</sys_id>
+        <sys_id>fcb68c834fee7600dcfa01b18110c762</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>Task</sys_name>
+        <sys_name>Code Review</sys_name>
         <sys_overrides/>
         <sys_package display_value="CodeReviewer" source="x_snc_codereviewer">80e372b24f2e7600dcfa01b18110c7fd</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="CodeReviewer">80e372b24f2e7600dcfa01b18110c7fd</sys_scope>
-        <sys_update_name>sys_app_application_abe47ef24f2e7600dcfa01b18110c7d0</sys_update_name>
+        <sys_update_name>sys_app_application_fcb68c834fee7600dcfa01b18110c762</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-05-09 14:53:27</sys_updated_on>
-        <title>Task</title>
+        <sys_updated_on>2017-05-09 20:51:36</sys_updated_on>
+        <title>Code Review</title>
         <view_name/>
     </sys_app_application>
 </record_update>
